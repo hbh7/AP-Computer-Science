@@ -1,6 +1,3 @@
-package com.hbh7;
-
-// Example 2.1: Our  irst program
 public class HelloWorld2{
     public static void main(String [] args) {
         System.out.println("                 d         ");

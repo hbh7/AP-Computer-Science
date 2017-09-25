@@ -1,5 +1,3 @@
-package com.hbh7;
-
 public class proj2_2 {
 
     public static void main(String[] args) {

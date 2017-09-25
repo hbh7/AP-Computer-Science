@@ -1,5 +1,3 @@
-package com.hbh7;
-
 public class HelloWorld {
 
     public static void main(String[] args) {

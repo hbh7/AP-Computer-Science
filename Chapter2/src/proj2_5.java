@@ -1,5 +1,3 @@
-package com.hbh7;
-
 import java.util.Scanner;
 
 public class proj2_5 {
