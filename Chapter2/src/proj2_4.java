@@ -6,6 +6,6 @@ public class proj2_4 {
 
         int minutes = 365*24*60;
 
-        System.out.println("The number of minutes in a year is " + minutes + ".");
+        System.out.printf("The number of minutes in a year is %d.\n", minutes);
     }
 }

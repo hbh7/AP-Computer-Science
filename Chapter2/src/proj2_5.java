@@ -15,10 +15,10 @@ public class proj2_5 {
 
         System.out.print("Great! Now, please input the object's velocity in meters per second! ");
         double velocity = scanner.nextDouble();
+        scanner.close();
 
         double momentum = mass*velocity;
 
-        System.out.println( "Cool! Your object's velocity is " + momentum + "!");
-
+        System.out.printf("Cool! Your object's momentum is %f!\n", momentum);
     }
 }
