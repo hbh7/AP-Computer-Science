@@ -18,7 +18,7 @@ public class proj2_5 {
 
         double momentum = mass*velocity;
 
-        System.out.println( "Cool! Your object's velocity is " + momentum + "!");
+        System.out.println( "Cool! Your object's momentum is " + momentum + "!");
 
     }
 }
