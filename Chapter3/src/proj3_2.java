@@ -14,7 +14,7 @@ public class proj3_2 {
         double diameter      = radius * 2;
         double circumference = Math.PI * diameter;
         double surfaceArea   = 4 * Math.PI * Math.pow(radius, 2);
-        double volume        = (4/3) * Math.PI * Math.pow(radius, 3);
+        double volume        = (4.0/3.0) * Math.PI * Math.pow(radius, 3);
 
         System.out.printf("Your cube has a diameter of %f!\n", diameter);
         System.out.printf("Your cube has a circumference of %f!\n", circumference);
