@@ -5,12 +5,10 @@ public class proj3_5 {
     static class Job {
         double wage;
         List<WorkDay> workDays;
-        double paycheck;
 
         Job(double wage) {
             this.wage = wage;
             this.workDays = new ArrayList<>();
-            this.paycheck = 0.0;
         }
 
         void addWorkDay(WorkDay workDay) {
@@ -18,11 +16,9 @@ public class proj3_5 {
         }
 
         double getPaycheck() {
-            this.workDays.forEach(d -> {
-                this.paycheck += d.getRegularHours() * this.wage;
-                this.paycheck += d.getOvertimeHours() * this.wage * 1.5;
-            });
-            return paycheck;
+            return this.workDays.stream()
+                    .mapToDouble(d -> (d.getRegularHours() * this.wage) + (d.getOvertimeHours() * this.wage * 1.5))
+                    .sum();
         }
     }
 
