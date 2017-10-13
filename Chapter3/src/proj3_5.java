@@ -1,34 +1,80 @@
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class proj3_5 {
-    public static void main (String [] args) {
+    static class Job {
+        double wage;
+        List<WorkDay> workDays;
+        double paycheck;
 
+        Job(double wage) {
+            this.wage = wage;
+            this.workDays = new ArrayList<>();
+            this.paycheck = 0.0;
+        }
+
+        void addWorkDay(WorkDay workDay) {
+            this.workDays.add(workDay);
+        }
+
+        double getPaycheck() {
+            this.workDays.forEach(d -> {
+                this.paycheck += d.getRegularHours() * this.wage;
+                this.paycheck += d.getOvertimeHours() * this.wage * 1.5;
+            });
+            return paycheck;
+        }
+    }
+
+    static class WorkDay {
+        Day day;
+        double regularHours;
+        double overtimeHours;
+
+        WorkDay(Day day) {
+            this.day = day;
+        }
+
+        double getRegularHours() {
+            return regularHours;
+        }
+
+        void setRegularHours(double regularHours) {
+            this.regularHours = regularHours;
+        }
+
+        double getOvertimeHours() {
+            return overtimeHours;
+        }
+
+        void setOvertimeHours(double overtimeHours) {
+            this.overtimeHours = overtimeHours;
+        }
+    }
+
+    enum Day {
+        MONDAY,
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY
+    }
+
+    public static void main (String [] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("What's your hourly wage? ");
-        double hourlyWage = scanner.nextDouble();
+        Job job = new Job(scanner.nextDouble());
 
-        String Days[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-        double hoursPerDay[] = new double[5];
-        double overtimePerDay[] = new double[5];
-        double payPerDay[] = new double[5];
+        Stream.of(Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY).forEach(d -> {
+            WorkDay workDay = new WorkDay(d);
+            System.out.print("How many regular hours did you work on " + d.name() + "? ");
+            workDay.setRegularHours(scanner.nextDouble());
+            System.out.print("How many overtime hours did you work on " + d.name() + "? ");
+            workDay.setOvertimeHours(scanner.nextDouble());
+            job.addWorkDay(workDay);
+        });
 
-        for (int i = 0; i<5; i++) {
-            System.out.print("How much did you work " + Days[i] + "? ");
-            hoursPerDay[i] = scanner.nextInt();
-            System.out.print("Overtime? ");
-            overtimePerDay[i] = scanner.nextInt();
-
-            payPerDay[i] = (hoursPerDay[i] * hourlyWage) + (1.5 * overtimePerDay[i] * hourlyWage);
-        }
-
-        double paycheck = 0;
-
-        for (int i = 0; i<5; i++) {
-            paycheck = paycheck + payPerDay[i];
-        }
-
-        System.out.println("Your total paycheck is " + paycheck + ". Good job!");
-
+        System.out.println("Your total paycheck is " + job.getPaycheck() + ". Good job!");
     }
 }
