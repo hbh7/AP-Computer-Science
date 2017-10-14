@@ -27,8 +27,10 @@ public class proj3_5 {
         double regularHours;
         double overtimeHours;
 
-        WorkDay(Day day) {
+        WorkDay(Day day, double regularHours, double overtimeHours) {
             this.day = day;
+            this.regularHours = regularHours;
+            this.overtimeHours = overtimeHours;
         }
 
         double getRegularHours() {
@@ -62,14 +64,15 @@ public class proj3_5 {
         System.out.print("What's your hourly wage? ");
         Job job = new Job(scanner.nextDouble());
 
-        Stream.of(Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY).forEach(d -> {
-            WorkDay workDay = new WorkDay(d);
-            System.out.print("How many regular hours did you work on " + d.name() + "? ");
-            workDay.setRegularHours(scanner.nextDouble());
-            System.out.print("How many overtime hours did you work on " + d.name() + "? ");
-            workDay.setOvertimeHours(scanner.nextDouble());
-            job.addWorkDay(workDay);
-        });
+        Stream.of(Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.FRIDAY)
+                .map(d -> {
+                    System.out.print("How many regular hours did you work on " + d.name() + "? ");
+                    double r = scanner.nextDouble();
+                    System.out.print("How many overtime hours did you work on " + d.name() + "? ");
+                    double o = scanner.nextDouble();
+                    return new WorkDay(d, r, o);
+                })
+                .forEach(job::addWorkDay);
 
         System.out.println("Your total paycheck is " + job.getPaycheck() + ". Good job!");
     }
