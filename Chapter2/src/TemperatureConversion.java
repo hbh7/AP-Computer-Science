@@ -1,5 +1,3 @@
-package com.hbh7;
-
 import java.util.Objects;
 import java.util.Scanner;
 

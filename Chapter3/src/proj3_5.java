@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class proj3_5 {
     public static void main (String [] args) {
 
+        /*
+        Modify the program you created in Project 3-4 so that it prompts the user for the regular and overtime
+        hours of each of five working days.
+         */
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("What's your hourly wage? ");
