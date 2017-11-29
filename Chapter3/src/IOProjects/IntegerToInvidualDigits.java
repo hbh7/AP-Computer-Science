@@ -11,7 +11,7 @@ public class IntegerToInvidualDigits {
         System.out.print("Integer please! ");
         String integer = scanner.next();
 
-        for (int i = 0;i < integer.length(); i++){
+        for (int i = 0; i < integer.length(); i++){
             System.out.println(integer.charAt(i));
         }
     }
