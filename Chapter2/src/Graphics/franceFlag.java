@@ -1,14 +1,15 @@
-package Chapter2;
+package Graphics;
+
 
 import javax.swing.*;
 import java.awt.*;
 
-public class bulgariaFlag {
+public class franceFlag {
     public static void main(String[] args){
 
-        // National flags are displayed on various Web sites such as http://flagspot.net/flags/. The flags of France,
+        // National flags are diaplyed on various Web sites such as http://flagspot.net/flags/. The flags of France,
         // Mauritius, and Bulgaria consist of flat, colored areas. Write separate programs that display these flags.
-        // Bulgaria.
+        // France.
 
         JFrame GUI = new JFrame();
         GUI.setTitle("Fourth GUI Program");
@@ -16,16 +17,16 @@ public class bulgariaFlag {
         GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel1 = new JPanel();
-        panel1.setBackground(Color.white);
+        panel1.setBackground(Color.blue);
 
         JPanel panel2 = new JPanel();
-        panel2.setBackground(Color.green);
+        panel2.setBackground(Color.white);
 
         JPanel panel3 = new JPanel();
         panel3.setBackground(Color.red);
 
         Container pane = GUI.getContentPane();
-        pane.setLayout(new GridLayout(3,1));
+        pane.setLayout(new GridLayout(1,3));
 
         pane.add(panel1);
         pane.add(panel2);

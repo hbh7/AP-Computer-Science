@@ -1,4 +1,4 @@
-package Chapter2;
+package Graphics;
 
 // Example 2.6: a frame with a 2 by 2 grid of colored panels
 import javax.swing.*;    // For JFrame and JPanel

@@ -1,4 +1,4 @@
-package Chapter2;
+package Graphics;
 
 import javax.swing.*;
 import java.awt.*;

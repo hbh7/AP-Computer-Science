@@ -1,4 +1,4 @@
-package Chapter2;
+package Graphics;
 
 // Example 2.4: a frame with an empty, pink panel
 import javax.swing.*;    // For JFrame and JPanel

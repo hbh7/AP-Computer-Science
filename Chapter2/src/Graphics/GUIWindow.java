@@ -1,4 +1,4 @@
-package Chapter2;
+package Graphics;
 
 // Example 2.3: an empty frame
 import javax.swing.*;     // Access JFrame

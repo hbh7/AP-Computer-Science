@@ -14,7 +14,7 @@ public class proj4_9 {
         result, and display each set of inputs and their result on an output line in the terminal window.
          */
 
-        FileInputStream fis = new FileInputStream("E:/School/12th Grade/AP Computer Science/IdeaProjects/Chapter4/src/Projects/input.txt");
+        FileInputStream fis = new FileInputStream("C:/Datastore/School/School - 12th Grade/AP Computer Science/IdeaProjects/Chapter4/src/Projects/input.txt");
 
         //Construct BufferedReader from InputStreamReader
         BufferedReader br = new BufferedReader(new InputStreamReader(fis));

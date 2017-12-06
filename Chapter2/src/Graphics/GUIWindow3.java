@@ -1,4 +1,4 @@
-package Chapter2;
+package Graphics;
 
 // Example 2.5: a frame with 5 colored panels
 // that show the border layout
