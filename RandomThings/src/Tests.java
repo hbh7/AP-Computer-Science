@@ -9,5 +9,10 @@ public class Tests {
             System.out.println(true);
         }
         System.out.println(Math.max(x, y));
+
+        x = 8;
+        y = 4;
+
+        System.out.println(x + y * 1.5);
     }
 }

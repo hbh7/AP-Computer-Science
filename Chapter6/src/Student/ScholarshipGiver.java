@@ -1,6 +1,13 @@
+package Student;//
+// Code written by hbh7
+// hbh7.com
+// github.com/hbh7/AP-Computer-Science
+//
+// Example 6.1: Test program for Student.Student class
+//
+
 import java.util.Scanner;
 
-// Example 6.1: Test program for Student class
 public class ScholarshipGiver {
     public static void main (String[] args) {
         Student s1 = new Student();
@@ -26,7 +33,6 @@ public class ScholarshipGiver {
             i++;
         }
 
-
         System.out.print("What is the name of the second student? ");
         String s2name = scanner.next();
         s2.setName(s2name);
@@ -45,7 +51,7 @@ public class ScholarshipGiver {
             i++;
         }
 
-        String highScorer = "";
+        String highScorer;
 
         if (s1.getAverage() > s2.getAverage()) {
             highScorer = s1.getName();

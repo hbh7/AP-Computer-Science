@@ -1,17 +1,21 @@
+package BankAccount;//
+// Code written by hbh7
+// hbh7.com
+// github.com/hbh7/AP-Computer-Science
+//
+// Project 6.5
+// Develop a new class called BankAccount.BankAccount. A bank account has an owner’s name and a balance.
+// Be sure to include a constructor that allows a client to supply the owner’s name and an initial
+// balance. A bank account needs accessors for the name and balance, mutators for making
+// deposits and withdrawals, and a toString method. Test-drive your new class with a program
+// similar to the one used to test the Student.Student class in Section 6.3.
+//
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class BankTeller {
-    public static void main (String[] args) throws IOException {
-
-        /*
-        PROJECT 6-5
-        Develop a new class called BankAccount. A bank account has an owner’s name and a balance.
-        Be sure to include a constructor that allows a client to supply the owner’s name and an initial
-        balance. A bank account needs accessors for the name and balance, mutators for making
-        deposits and withdrawals, and a toString method. Test-drive your new class with a program
-        similar to the one used to test the Student class in Section 6.3.
-         */
+    public static void main (String[] args) throws IOException, BadActorException {
 
         BankAccount user = new BankAccount();
 
@@ -19,6 +23,7 @@ public class BankTeller {
 
         System.out.println("Welcome to the bank of hbh7! Please enter your name to begin.");
         user.setName(scanner.next().toLowerCase());
+
         user.login();
         System.out.println("Success! Now logged in as " + user.getName());
 
@@ -31,8 +36,24 @@ public class BankTeller {
 
             if(action.toLowerCase().equals("deposit") || action.toLowerCase().equals("d")) {
                 System.out.print("How much would you like to deposit? ");
-                double amount = scanner.nextDouble();
-                if(user.doTransaction("deposit", amount)) {
+                double depositAmount = 0;
+                try {
+                    depositAmount = scanner.nextDouble();
+                    if(depositAmount < 0) {
+                        throw new BadActorException();
+                    }
+                } catch(BadActorException e) {
+                    System.err.println("HACKER ALERT!!! Kicking from system!");
+                    System.err.flush();
+                    System.exit(0);
+                } catch(Exception e) {
+                    scanner.next();
+                    System.err.println("Please input a valid amount to deposit!");
+                    System.err.flush();
+                    continue;
+                }
+
+                if(user.doTransaction("deposit", depositAmount)) {
                     System.out.println("Your transaction was successful!");
                     System.out.println("New Balance: " + user.getBankBalance());
                 } else {
@@ -42,8 +63,24 @@ public class BankTeller {
 
             } else if(action.toLowerCase().equals("withdraw") || action.toLowerCase().equals("w")) {
                 System.out.print("How much would you like to withdraw? ");
-                double amount = scanner.nextDouble();
-                if(user.doTransaction("withdraw", amount)) {
+                double withdrawAmount = 0;
+                try {
+                    withdrawAmount = scanner.nextDouble();
+                    if(withdrawAmount < 0) {
+                        throw new BadActorException();
+                    }
+                } catch(BadActorException e) {
+                    System.err.println("HACKER ALERT!!! Kicking from system!");
+                    System.err.flush();
+                    System.exit(0);
+                } catch(Exception e) {
+                    scanner.next();
+                    System.err.println("Please input a valid amount to withdraw!");
+                    System.err.flush();
+                    continue;
+                }
+
+                if(user.doTransaction("withdraw", withdrawAmount)) {
                     System.out.println("Your transaction was successful!");
                     System.out.println("New Balance: " + user.getBankBalance());
                     System.out.println();

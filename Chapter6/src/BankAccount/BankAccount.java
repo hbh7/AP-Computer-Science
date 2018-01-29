@@ -1,3 +1,11 @@
+package BankAccount;//
+// Code written by hbh7
+// hbh7.com
+// github.com/hbh7/AP-Computer-Science
+//
+// Bank Account Class
+//
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;

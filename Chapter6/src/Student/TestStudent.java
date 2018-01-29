@@ -1,7 +1,13 @@
+package Student;//
+// Code written by hbh7
+// hbh7.com
+// github.com/hbh7/AP-Computer-Science
+//
+// Example 6.1: Test program for Student.Student class
+//
+
 public class TestStudent{
     public static void main (String[] args){
-
-        // Example 6.1: Test program for Student class
 
         Student s1 = new Student();
         Student s2 = new Student();

@@ -1,12 +1,14 @@
+package Student;//
+// Code written by hbh7
+// hbh7.com
+// github.com/hbh7/AP-Computer-Science
+//
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Student {
-
-    // Code written by hbh7
-    // hbh7.com
-    // github.com/hbh7/AP-Computer-Science
 
     // Instance variables
     private String name;
@@ -81,7 +83,7 @@ public class Student {
         // Construct and return a string representation of the student
         String str;
         str = "Name: " + name + "\n" +
-              "Student ID: " + studentID + "\n" +
+              "Student.Student ID: " + studentID + "\n" +
               "Test Scores: " + Arrays.toString(testScores.toArray()) + "\n" +
               "Average: " + getAverage() + "\n" +
               "High Score: " + getHighScore() + "\n" +
