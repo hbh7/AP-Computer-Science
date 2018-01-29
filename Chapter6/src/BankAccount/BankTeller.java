@@ -1,4 +1,4 @@
-package BankAccount;//
+//
 // Code written by hbh7
 // hbh7.com
 // github.com/hbh7/AP-Computer-Science
@@ -10,6 +10,8 @@ package BankAccount;//
 // deposits and withdrawals, and a toString method. Test-drive your new class with a program
 // similar to the one used to test the Student.Student class in Section 6.3.
 //
+
+package BankAccount;
 
 import java.io.IOException;
 import java.util.Scanner;
