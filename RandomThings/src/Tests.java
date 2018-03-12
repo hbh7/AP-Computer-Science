@@ -14,5 +14,7 @@ public class Tests {
         y = 4;
 
         System.out.println(x + y * 1.5);
+
+        int intMatrix[][] = new int[10][10];
     }
 }
